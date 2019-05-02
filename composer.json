@@ -1,0 +1,35 @@
+{
+  "name": "icarus/doctrine-helpers",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "description": "Helpers for working with Doctrine 2.",
+  "keywords": ["doctrine", "smart enum type", "enum"],
+  "authors": [
+    {
+      "name": "Pavel Gajdoš",
+      "email": "info@pavelgajdos.cz"
+    },
+    {
+      "name": "Icarus s.r.o",
+      "homepage": "http://icarus.cz"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0"
+  },
+  "require-dev": {
+    "nette/tester": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Icarus\\DoctrineHelpers\\SmartEnumType\\": "src/SmartEnumType/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "IcarusTests\\": "tests/",
+      "IcarusTests\\SmartEnumType\\": "tests/SmartEnumType",
+      "IcarusTests\\SmartEnumType\\TestTypes\\": "tests/SmartEnumType/TestTypes"
+    }
+  }
+}
