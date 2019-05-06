@@ -23,7 +23,7 @@
   "autoload": {
     "psr-4": {
       "Icarus\\DoctrineHelpers\\SmartEnumType\\": "src/SmartEnumType/",
-      "Icarus\\DoctrineHelpers\\Entities\\Attributes": "src/Attributes/"
+      "Icarus\\DoctrineHelpers\\Entities\\Attributes\\": "src/Attributes/"
     }
   },
   "autoload-dev": {
