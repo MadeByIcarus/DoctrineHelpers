@@ -45,7 +45,7 @@ abstract class SmartEnumType
 
 
 
-    protected function isEqualTo($type): bool
+    public function isEqualTo($type): bool
     {
         if (!$type instanceof SmartEnumType) {
             try {
