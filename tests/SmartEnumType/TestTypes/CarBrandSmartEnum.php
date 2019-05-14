@@ -17,7 +17,7 @@ final class CarBrandSmartEnum extends SmartEnumType
 
     public function isBmw()
     {
-        return $this->compare(self::bmw());
+        return $this->isEqualTo(self::bmw());
     }
 
 
@@ -31,7 +31,7 @@ final class CarBrandSmartEnum extends SmartEnumType
 
     public function isSkoda()
     {
-        return $this->compare(self::skoda());
+        return $this->isEqualTo(self::skoda());
     }
 
 

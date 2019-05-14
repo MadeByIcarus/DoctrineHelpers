@@ -45,8 +45,15 @@ abstract class SmartEnumType
 
 
 
-    protected function compare(SmartEnumType $type): bool
+    protected function isEqualTo($type): bool
     {
+        if (!$type instanceof SmartEnumType) {
+            try {
+                $type = static::fromValue($type);
+            } catch (\InvalidArgumentException $e) {
+                return false;
+            }
+        }
         return static::class === get_class($type) && $this->value === $type->__toString();
     }
 }

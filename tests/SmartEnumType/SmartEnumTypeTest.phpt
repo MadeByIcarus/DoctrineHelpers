@@ -17,21 +17,23 @@ require_once __DIR__ . '/../bootstrap.php';
 class SmartEnumTypeTest extends TestCase
 {
 
-    public function testCompare()
+    public function testEqual()
     {
         // same class, same values
         $pairs = [
             [CarBrandSmartEnum::skoda(), CarBrandSmartEnum::skoda(), true],
             [CarBrandSmartEnum::skoda(), CarBrandSmartEnum::bmw(), false],
-            [CarBrandSmartEnum::skoda(), CarBrand2SmartEnum::skoda(), false]
+            [CarBrandSmartEnum::skoda(), CarBrand2SmartEnum::skoda(), false],
+            [CarBrandSmartEnum::skoda(), 'skoda', true],
+            [CarBrandSmartEnum::skoda(), 'some-value', false]
         ];
 
-        $method = new \ReflectionMethod(CarBrandSmartEnum::class, 'compare');
+        $method = new \ReflectionMethod(CarBrandSmartEnum::class, 'isEqualTo');
         $method->setAccessible(true);
 
         foreach ($pairs as $pair) {
             list($a, $b, $expected) = $pair;
-            Assert::equal($expected, $method->invokeArgs($a, [$b]));
+            Assert::equal($expected, $method->invokeArgs($a, [$b]), "Is '".$a."'".($expected ? "" : " not")." equal to '".$b."'?");
         }
     }
 
